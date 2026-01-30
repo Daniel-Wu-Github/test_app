@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Seed books
+[
+  "The Great Gatsby",
+  "To Kill a Mockingbird",
+  "1984",
+  "Pride and Prejudice",
+  "The Catcher in the Rye"
+].each do |title|
+  Book.find_or_create_by!(title: title)
+end
