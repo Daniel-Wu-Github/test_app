@@ -23,11 +23,6 @@ gem "jbuilder"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
-# Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
-gem "solid_cache"
-gem "solid_queue"
-gem "solid_cable"
-
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem "rexml"
@@ -57,6 +52,12 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  
+  # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+  # These require separate database configs, so only use in development
+  gem "solid_cache"
+  gem "solid_queue"
+  gem "solid_cable"
 end
 
 group :test do
