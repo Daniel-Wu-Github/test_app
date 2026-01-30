@@ -64,7 +64,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem 'yaml_db'
 
-gem 'brakeman'
-gem 'rubocop'
+gem 'yaml_db'
