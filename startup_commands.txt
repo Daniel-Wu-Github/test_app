@@ -1,0 +1,28 @@
+===============================================================
+  RAILS DOCKER STARTUP CHEAT SHEET
+===============================================================
+
+--- PART 1: WINDOWS POWERSHELL ---
+(Run these commands to start the Docker environment)
+
+1. Navigate to your project folder:
+   cd C:\Users\danie\OneDrive\Documents\CSCE 431
+
+2. Run the Docker Container:
+   docker run -it --rm --volume "${PWD}:/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 paulinewade/csce431:sp26v1
+
+
+--- PART 2: INSIDE THE CONTAINER ---
+(Run these commands once you see the "root@..." prompt)
+
+1. Navigate to your app folder:
+   cd csce431/test_app
+
+2. (Optional) Restore your database data if you previously dumped it:
+   rake db:load
+
+3. Start the Rails Server:
+   rails server --binding=0.0.0.0
+
+4. Access in Browser:
+   http://localhost:3000/books
